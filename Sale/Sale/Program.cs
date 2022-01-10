@@ -15,7 +15,6 @@ namespace Sale
             Console.WriteLine($"The price of the item is {price:C}");
             Console.WriteLine($"The tax is {tax:C}");
             Console.WriteLine($"The total is {total:C}");
-            Console.ReadLine();
         }
     }
 }
