@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* Purpose:         Compute the total of a sale item using the price and tax.
+ * 
+ * Inputs:          price in dolars and cents
+ * 
+ * Outups:          Sales total
+ * 
+ * Algorithm:   
+ * 
+ * Last modified:   2022-01-21
+ */
+using System;
 
 namespace Sale
 {
@@ -6,15 +16,33 @@ namespace Sale
     {
         static void Main(string[] args)
         {
-            double price, tax, total;
+            string input;
+            double price, tax = 0.05, total;
+            bool check = false;
 
-            price = 29.75;
-            tax = 1.76;
-            total = 31.51;
+            while (!check)
+            {
+                Console.WriteLine("Enter price");
+                input = Console.ReadLine();
 
-            Console.WriteLine($"The price of the item is {price:C}");
-            Console.WriteLine($"The tax is {tax:C}");
-            Console.WriteLine($"The total is {total:C}");
+                if (double.TryParse(input, out price))
+                {
+                    price = double.Parse(input);
+                    Console.WriteLine($"The price of the item is {price:C}");
+                    total = price * tax;
+                    Console.WriteLine($"The tax is {total:C}");
+                    total = price + (price * tax);
+                    Console.WriteLine($"The total is {total:C}");
+                    check = true;
+                }
+                else
+                {
+                    Console.WriteLine("Input error!");
+                    check = false;
+                }
+            }
+            Console.ReadLine();
+
         }
     }
 }
