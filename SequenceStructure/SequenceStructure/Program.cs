@@ -64,7 +64,7 @@ namespace SequenceStructure
             Console.WriteLine("Enter expected annual salary:");
             annualPay = double.Parse(Console.ReadLine());
 
-            Console.WriteLine($"My name is {name}, my age is {age} and I hope to earn {annualPay:C} per year.");
+            Console.WriteLine($"My name is {name}, my age is {age} and I hope to earn {annualPay:C2} per year.");
         }
 
         static void exercise2()
@@ -78,7 +78,7 @@ namespace SequenceStructure
             area = (radius * radius) * pi;
             volume = area * lenght;
 
-            Console.WriteLine($"The area is {area}. \n The volume is {volume}.");
+            Console.WriteLine($"The area is {area:F3}. \n The volume is {volume:F3}.");
         }
 
         static void exercise3()
@@ -90,7 +90,7 @@ namespace SequenceStructure
             lenght = double.Parse(Console.ReadLine());
             area = ((3 * Math.Sqrt(3)) * Math.Pow(lenght, 2)) / 2;
 
-            Console.WriteLine($"The area of the hexagon is {area}");
+            Console.WriteLine($"The area of the hexagon is {area:F3}");
         }
 
         static void exercise4()
@@ -126,7 +126,7 @@ namespace SequenceStructure
             numberOfYears = double.Parse(Console.ReadLine());
 
             futureInvestmentValue = investmentamount * Math.Pow((1 + ((interestRate / 12) / 100)), (numberOfYears * 12));
-            Console.WriteLine($"Future value is {futureInvestmentValue:C}");
+            Console.WriteLine($"Future value is {futureInvestmentValue:C2}");
         }
     }
 }
